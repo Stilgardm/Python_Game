@@ -1,0 +1,22 @@
+Creating and using Virtual machine
+
+Create a Virtual Machine name my_env
+d:\PythonProject>D:\PythonVer\Python3_14_2\python -m venv my_env
+
+
+Activate Virtual Machine
+d:\PythonProject>my_env\scripts\activate
+
+run Pyhton
+
+python
+
+to quit VM
+deactivate
+
+
+
+other
+python -m http.server (to start a quick web server)
+
+python -m pip install (to install packages)
