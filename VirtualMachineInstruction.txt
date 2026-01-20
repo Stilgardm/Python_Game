@@ -20,3 +20,9 @@ other
 python -m http.server (to start a quick web server)
 
 python -m pip install (to install packages)
+
+
+
+create an EXE
+pip install pyinstaller   (To install the package)
+pyinstaller main.py --onefile  (create main.py into one EXE)
