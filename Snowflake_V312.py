@@ -1,14 +1,27 @@
+import json
 import snowflake.connector
 
 # connection parameters
-config = {
-    "user": "STILGARDM",  # Replace with your Snowflake login name
-    "password": "4e9SikfxVu44wyg",  # Replace with your password
-    "account": "oywpqqi-qm00385",  # Your specific account identifier
-    "warehouse": "COMPUTE_WH",  # Default trial warehouse
-    "database": "LEARNING_DB",
-    "schema": "PYTHON_TEST"
-}
+KEY_PATH = "D:/PythonProject/snowflake_creds.json"
+
+with open(KEY_PATH, 'r') as f:
+    config = json.load(f)
+
+def get_snowflake_data():
+    # Load credentials from the JSON file
+
+    # Connect using the dictionary loaded from JSON
+    ctx = snowflake.connector.connect(
+        user=config['user'],
+        password=config['password'],
+        account=config['account'],
+        warehouse=config['warehouse'],
+        database=config['database'],
+        schema=config['schema'],
+        role=config['role']
+    )
+
+    return ctx
 
 try:
     print("Connecting to Snowflake...")
